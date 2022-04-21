@@ -1,10 +1,13 @@
 body {
-    font-family: Source Sans Pro;
-    background: #eee;
-    margin: auto;
-    text-align: center;
-   
-  }
+  font-family: Source Sans Pro;
+  background: #eee;
+  margin: auto;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    }
 
   #container {
     background: white;
@@ -15,21 +18,96 @@ body {
     border-radius: 1%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+  }
+
+  h1 {
+    width: 300px
   }
 
   #game-board {
-    /* display: grid;
-    grid-template-columns: repeat(3, 2em); */
     display: grid;
-    width: 540px;
-    grid-template-columns: 120px 120px 120px;
-    align-items: start;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;;
+    align-items: center; 
     justify-content: center;
-    margin: 82px
-      }
+    position: relative;
+    width: 300px;
+    height: 300px;
+    gap: 0;
+  }
 
-  #cell-1 {
-      border-bottom-color: black
+    #game-results-area {
+      width: 300px;
+    }    
 
-      }
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    font-size: 75px;
+    /* border-radius: 5px; */
+  }
 
+  
+  .line {
+    position: absolute;
+    background-color: red;
+  }
+
+  .line-across-1 {
+    width: 100%;
+    height: 4px;
+    top: 16%;
+  } 
+
+  .line-across-2 {
+    width: 100%;
+    height: 4px;
+    top: 49%;
+  } 
+  
+  .line-across-3 {
+    width: 100%;
+    height: 4px;
+    top: 82%;
+  } 
+
+  .line-down-1 {
+    width: 4px;
+    height: 100%;
+    left: 17%;
+  }
+
+  .line-down-2 {
+    width: 4px;
+    height: 100%;
+    left: 50%;
+  }
+
+  .line-down-3 {
+    width: 4px;
+    height: 100%;
+    left: 84%;
+  }
+
+  .line-diagonal-1 {
+    width: 93%;
+    height: 4px;
+    top: 49%;
+    left: 4%;    
+    transform: skewY(45deg);
+  }
+
+  .line-diagonal-2 {
+    width: 93%;
+    height: 4px;
+    top: 49%;
+    left: 4%;    
+    transform: skewY(-45deg);
+  }
