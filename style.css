@@ -23,7 +23,9 @@ body {
   }
 
   h1 {
-    width: 300px
+    width: 300px;
+    text-shadow: 50%;
+    
   }
 
   #game-board {

@@ -83,7 +83,11 @@ function checkForWinner() {
     }
   }
   // check for Draw
- 
+  // The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value. - mdn
+  const fullBoard = boardStatus.every((cell) => cell != null);
+  if (fullBoard) {
+    gameOverWindow(null);
+  }
 }
 
 function gameOverWindow(winnerText) {
