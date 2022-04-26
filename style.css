@@ -24,8 +24,9 @@ body {
 
   h1 {
     width: 300px;
-    text-shadow: 50%;
-    
+    color: red;
+    text-shadow: #ddd;
+       
   }
 
   #game-board {
@@ -64,43 +65,43 @@ body {
 
   .line-across-1 {
     width: 100%;
-    height: 4px;
+    height: 8px;
     top: 16%;
   } 
 
   .line-across-2 {
     width: 100%;
-    height: 4px;
+    height: 8px;
     top: 49%;
   } 
   
   .line-across-3 {
     width: 100%;
-    height: 4px;
+    height: 8px;
     top: 82%;
   } 
 
   .line-down-1 {
-    width: 4px;
+    width: 8px;
     height: 100%;
     left: 17%;
   }
 
   .line-down-2 {
-    width: 4px;
+    width: 8px;
     height: 100%;
     left: 50%;
   }
 
   .line-down-3 {
-    width: 4px;
+    width: 8px;
     height: 100%;
     left: 84%;
   }
 
   .line-diagonal-1 {
     width: 93%;
-    height: 4px;
+    height: 8px;
     top: 49%;
     left: 4%;    
     transform: skewY(45deg);
@@ -108,8 +109,16 @@ body {
 
   .line-diagonal-2 {
     width: 93%;
-    height: 4px;
+    height: 8px;
     top: 49%;
     left: 4%;    
     transform: skewY(-45deg);
+  }
+
+  #play-again {
+    font-size: 20px;
+    background-color: #f44336;
+    border-radius: 8px;
+    border: none;
+    color: white;
   }
