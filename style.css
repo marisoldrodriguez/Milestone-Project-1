@@ -1,5 +1,5 @@
 body {
-  font-family: Source Sans Pro;
+  font-family: sans-serif;
   background: #eee;
   margin: auto;
   text-align: center;
@@ -23,11 +23,11 @@ body {
   }
 
   h1 {
+    font-size: 45px;
     width: 300px;
     color: red;
     text-shadow: #ddd;
-       
-  }
+    }
 
   #game-board {
     display: grid;
