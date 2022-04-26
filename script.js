@@ -10,7 +10,7 @@ const playerO = "O";
 // Set turn to player X
 let turn = playerX;
 
-// Track board status
+// Create an array to track board status
 const boardStatus = Array(cells.length);
 boardStatus.fill(null);
 
@@ -44,6 +44,10 @@ function cellClick(event) {
     console.log(turn);
   }
 
+  // audio source for click sound - free download from https://freesound.org/people/EminYILDIRIM/sounds/536108/
+  // code for audio - https://stackoverflow.com/questions/9419263/how-to-play-audio
+  const clickSound = new Audio("/audio/click.wav");
+  clickSound.play();
   checkForWinner();
 }
 
@@ -97,7 +101,7 @@ function gameOverWindow(winnerText) {
   }
   gameResultsArea.className = "visible";
   gameOverMessage.innerText = text;
-}
+ }
 
 playAgain.addEventListener("click", newGame);
 function newGame() {

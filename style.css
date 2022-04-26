@@ -67,6 +67,7 @@ body {
     width: 100%;
     height: 8px;
     top: 16%;
+    
   } 
 
   .line-across-2 {
@@ -105,7 +106,7 @@ body {
     top: 49%;
     left: 4%;    
     transform: skewY(45deg);
-  }
+     }
 
   .line-diagonal-2 {
     width: 93%;
