@@ -101,7 +101,10 @@ function gameOverWindow(winnerText) {
   }
   gameResultsArea.className = "visible";
   gameOverMessage.innerText = text;
- }
+  // game over sound free source: https://freesound.org/people/awrecording.it/sounds/547657/
+  const gameOver = new Audio("/audio/game-over.wav");
+  gameOver.play();
+}
 
 playAgain.addEventListener("click", newGame);
 function newGame() {
