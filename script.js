@@ -1,4 +1,4 @@
-// Elements from HTML
+// Selecting elements from HTML
 const cells = document.querySelectorAll(".cell");
 const line = document.getElementById("line");
 const gameResultsArea = document.getElementById("game-results-area");
@@ -17,31 +17,36 @@ boardStatus.fill(null);
 // Add event listener to all of the cells on the board
 cells.forEach((cell) => cell.addEventListener("click", cellClick));
 
-// callback function cellClick
+// callback function cellClick for click event
 function cellClick(event) {
+  // if the game over message win or draw is visible, the code breaks here.
   if (gameOverMessage.classList.contains("visible")) {
     return;
   }
 
+  // this gathers the info on the cell that is clicked on.
   const cell = event.target;
-  // When you want to store extra information that doesn't have visual representation, data-* global attributes form a class of attributes called custom data attributes, that allow proprietary information to be exchanged between the HTML and its DOM representation by scripts. -mdn web docs. In this case, I used the dataset.indexNumber (javascript) data-index-number (HTML) to assign an index number to each cell in my array that makes up the Tic Tac Toe board.
+
+  // When you want to store extra information that doesn't have visual representation, data-* global attributes form a class of attributes called custom data attributes, that allow proprietary information to be exchanged between the HTML and its DOM representation by scripts. -mdn web docs.
+  // I used the dataset.indexNumber (javascript) data-index-number (HTML) to assign an index number to each cell in my array that makes up the Tic Tac Toe board.
   const cellNumber = cell.dataset.indexNumber;
   if (cell.innerText != "") {
-    return;
+    return; //the code offers a break here if the cell has an x or o already in the cell.
   }
 
+  // player x code
   if (turn === playerX) {
     cell.innerText = playerX;
     boardStatus[cellNumber - 1] = playerX;
-    console.log(boardStatus);
+    // console.log(boardStatus); //used to track the progress of my code during the design.
     turn = playerO;
-    console.log(turn);
+    // console.log(turn); tracking progress during design
   } else {
     cell.innerText = playerO;
     boardStatus[cellNumber - 1] = playerO;
-    console.log(boardStatus);
+    // console.log(boardStatus); tracking progress of code during design
     turn = playerX;
-    console.log(turn);
+    // console.log(turn); tracking progress of code during design
   }
 
   // audio source for click sound - free download from https://freesound.org/people/EminYILDIRIM/sounds/536108/
@@ -53,6 +58,7 @@ function cellClick(event) {
 
 // Defining all the winning combinations possible that will be checked each time a click event takes place in one of the cells.
 const winningCombos = [
+  // lineClass are defined in CSS file
   // Rows
   { combo: [1, 2, 3], lineClass: "line-across-1" },
   { combo: [4, 5, 6], lineClass: "line-across-2" },
@@ -69,7 +75,7 @@ const winningCombos = [
 // Check for a winner or draw function is declared
 function checkForWinner() {
   // check for Winner
-  // The for...of statements combo iterates (loops) over the values of any iterable and became available with ES6 (JavaScript 2015). This form of loop allows a return statement to build a way to break out of the loop. -w3schools
+  // The for...of statements combo iterates (loops) over the values of any iterable, such as Arrays, Strings, Maps, NodeLists, and more. ES6 (JavaScript 2015) update. This form of loop allows a return statement to break out of the loop. -w3schools
   for (const winningCombo of winningCombos) {
     const combo = winningCombo.combo;
     const lineClass = winningCombo.lineClass;
@@ -106,6 +112,7 @@ function gameOverWindow(winnerText) {
   gameOver.play();
 }
 
+// adds an event listener to the play button and resets variables
 playAgain.addEventListener("click", newGame);
 function newGame() {
   line.className = "line";
@@ -114,5 +121,5 @@ function newGame() {
   cells.forEach((cell) => (cell.innerText = ""));
   turn = playerX;
   gameOverMessage.innerText = "";
-  console.log(boardStatus);
+  // console.log(boardStatus); track progress during design
 }
