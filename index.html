@@ -6,28 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
-  <!-- Free image provided by: https://www.freeimages.com/photo/winter-games-ii-1316715 -->
-  <body style="background-image: url('/assets/jj-ying-7JX0-bfiuxQ-unsplash.jpg')">
-    <div id="container">
-      <h1>Tic Tac Toe</h1>
+  <body style="background-image: url('/assets/jj-ying-7JX0-bfiuxQ-unsplash.jpg')">     
+    <div class="header">
+      <nav>
+        <h1>Tic Tac Toe</h1>
+        <ul>
+          <li><a href="#">About Me</a></li>
+          <li><a href="https://www.linkedin.com/in/marisol-d-rodriguez/">LinkedIn</a></li>
+          <li><a href="https://github.com/marisoldrodriguez">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>  
+    <div id="container">  
       <div id="game-board">
-        <div data-index-number="1" class="cell"></div>
-        <div data-index-number="2" class="cell"></div>
-        <div data-index-number="3" class="cell"></div>
-        <div data-index-number="4" class="cell"></div>
-        <div data-index-number="5" class="cell"></div>
-        <div data-index-number="6" class="cell"></div>
-        <div data-index-number="7" class="cell"></div>
-        <div data-index-number="8" class="cell"></div>
-        <div data-index-number="9" class="cell"></div>
-        <div id="line" class="line"></div>
+          <div data-index-number="1" class="cell"></div>
+          <div data-index-number="2" class="cell"></div>
+          <div data-index-number="3" class="cell"></div>
+          <div data-index-number="4" class="cell"></div>
+          <div data-index-number="5" class="cell"></div>
+          <div data-index-number="6" class="cell"></div>
+          <div data-index-number="7" class="cell"></div>
+          <div data-index-number="8" class="cell"></div>
+          <div data-index-number="9" class="cell"></div>
+          <div id="line" class="line"></div>
+      
+          <div id="game-results-area">
+            <h2 id="win-lose-text"></h2>
+            <button id="play-again">Play Again!</button>
+          </div>
       </div>
-      <div id="game-results-area">
-        <h2 id="win-lose-text"></h2>
-        <button id="play-again">Play Again!</button>
-      </div>
+    </div>
+    <div id="footer">
+      <p>2022 Copyright</p>
+      <a href="https://unsplash.com/@jjying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Photo courtesy of JJ Ying on Unsplash</a>
     </div>
     <script src="/script.js"></script>
   </body>

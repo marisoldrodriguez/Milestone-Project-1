@@ -1,0 +1,177 @@
+$color_1: red;
+$color_2: white;
+$color_3: black;
+$font-family_1: Trebuchet MS, Arial, sans-serif;
+$background-color_1: red;
+$background-color_2: #f44336;
+$background-color_3: #ddd;
+$main-background: #eee;
+
+body {
+	font-family: $font-family_1;
+	background: $main-background;
+	margin: auto;
+	text-align: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header {
+    h1 {
+        font-size: 45px;
+        width: 300px;
+        color: $color_1;
+        text-shadow: $background-color_3;
+    }
+    nav {
+        background: $main-background;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+        li {
+            padding: 15px;
+        }
+        a {
+            color: $color_3;
+            text-decoration: none;
+            &:hover {
+                color: $color_1;
+            }
+        }
+        
+    }   
+}
+
+#container {
+	background: $color_2;
+	padding: 15px;
+	width: 700px;
+	margin: auto;
+	box-shadow: 5px 3px 3px $background-color_3;
+	border-radius: 1%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+    #game-board {
+        background: $color_2;
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        gap: 0;
+    }
+
+    #game-results-area {
+        width: 300px;
+    }
+    .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        border: 2px solid $color_3;
+        font-size: 75px;
+    }
+    
+    .line {
+        /* creates lines for winning combos */
+        position: absolute;
+        background-color: $background-color_1;  
+    }   
+    .line-across-1 {
+        /* winning combo for top row */
+            width: 100%;
+            height: 8px;
+            top: 16%;
+        }
+     
+    .line-across-2 {        
+    /* winning combo for middle row */
+        width: 100%;
+        height: 8px;
+        top: 49%;
+    }
+    .line-across-3 {
+        /*  winning combo for bottom row*/
+        width: 100%;
+        height: 8px;
+        top: 82%;
+    }
+    .line-down-1 {
+        /* winning combo for first column */
+        width: 8px;
+        height: 100%;
+        left: 17%;
+    }
+    .line-down-2 {
+        /* winning combo for middle column */
+        width: 8px;
+        height: 100%;
+        left: 50%;
+    }
+    .line-down-3 {
+        /* winning combo for last column */
+        width: 8px;
+        height: 100%;
+        left: 84%;
+    }
+    .line-diagonal-1 {
+        /* winning combo linesfor diagonal */
+        width: 93%;
+        height: 8px;
+        top: 49%;
+        left: 4%;
+        transform: skewY(45deg);
+    }
+    .line-diagonal-2 {
+        /* winning combo line for diagonal */
+        width: 93%;
+        height: 8px;
+        top: 49%;
+        left: 4%;
+        transform: skewY(-45deg);
+    }
+    
+    #play-again {
+        /* Play again button styling */
+        font-size: 20px;
+        background-color: $background-color_2;
+        border-radius: 8px;
+        border: none;
+        color: $color_2;
+    }
+
+}
+
+#footer {
+    background: $main-background;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        font-family: $font-family_1;
+        padding: 15px;
+    }
+    a {
+        text-decoration: none;
+        color: $color_3;
+        padding: 15px;
+        &:hover {
+            color: $color_1;
+        }
+    }
+    
+}
