@@ -1,21 +1,16 @@
-$color_1: red;
-$color_2: white;
-$color_3: black;
-$font-family_1: Trebuchet MS, Arial, sans-serif;
-$background-color_1: red;
-$background-color_2: #f44336;
-$background-color_3: #ddd;
-$main-background: #eee;
+@import "config";
+@import "utilities";
 
 body {
+    @include set-bgc($main-background);
+    @include flex(column, center, none);
 	font-family: $font-family_1;
-	background: $main-background;
 	margin: auto;
 	text-align: center;
 	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
 }
 
 .header {
@@ -26,7 +21,7 @@ body {
         text-shadow: $background-color_3;
     }
     nav {
-        background: $main-background;
+        @include set-bgc($main-background);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -50,7 +45,7 @@ body {
 }
 
 #container {
-	background: $color_2;
+    @include set-bgc($color_2);
 	padding: 15px;
 	width: 700px;
 	margin: auto;
@@ -61,7 +56,7 @@ body {
 	align-items: center;
 
     #game-board {
-        background: $color_2;
+        @include set-bgc($color_2);
         display: grid;
         grid-template-columns: 100px 100px 100px;
         grid-template-rows: 100px 100px 100px;
@@ -88,8 +83,8 @@ body {
     
     .line {
         /* creates lines for winning combos */
-        position: absolute;
-        background-color: $background-color_1;  
+        @include set-bgc($background-color_1);
+        position: absolute;  
     }   
     .line-across-1 {
         /* winning combo for top row */
@@ -147,8 +142,8 @@ body {
     
     #play-again {
         /* Play again button styling */
+        @include set-bgc($background-color_2);
         font-size: 20px;
-        background-color: $background-color_2;
         border-radius: 8px;
         border: none;
         color: $color_2;
@@ -157,7 +152,7 @@ body {
 }
 
 #footer {
-    background: $main-background;
+    @include set-bgc($main-background);
     display: flex;
     align-items: center;
     justify-content: space-between;

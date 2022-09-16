@@ -1,12 +1,13 @@
 body {
-  font-family: Trebuchet MS, Arial, sans-serif;
-  background: #eee;
-  margin: auto;
-  text-align: center;
-  min-height: 100vh;
+  background-color: #eee;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: none;
+  font-family: Trebuchet MS, Arial, sans-serif;
+  margin: auto;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .header h1 {
@@ -16,7 +17,7 @@ body {
   text-shadow: #ddd;
 }
 .header nav {
-  background: #eee;
+  background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +38,7 @@ body {
 }
 
 #container {
-  background: white;
+  background-color: white;
   padding: 15px;
   width: 700px;
   margin: auto;
@@ -48,7 +49,7 @@ body {
   align-items: center;
 }
 #container #game-board {
-  background: white;
+  background-color: white;
   display: grid;
   grid-template-columns: 100px 100px 100px;
   grid-template-rows: 100px 100px 100px;
@@ -73,8 +74,8 @@ body {
 }
 #container .line {
   /* creates lines for winning combos */
-  position: absolute;
   background-color: red;
+  position: absolute;
 }
 #container .line-across-1 {
   /* winning combo for top row */
@@ -130,15 +131,15 @@ body {
 }
 #container #play-again {
   /* Play again button styling */
-  font-size: 20px;
   background-color: #f44336;
+  font-size: 20px;
   border-radius: 8px;
   border: none;
   color: white;
 }
 
 #footer {
-  background: #eee;
+  background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-between;
